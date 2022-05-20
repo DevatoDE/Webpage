@@ -1,5 +1,5 @@
 {
-  "version": "b7208fe1",
+  "version": "b502dd35",
   "entry": {
     "module": "/build/entry.client-55JO2ZCZ.js",
     "imports": [
@@ -13,7 +13,7 @@
     "root": {
       "id": "root",
       "path": "",
-      "module": "/build/root-J33Y2F7L.js",
+      "module": "/build/root-JA424CKM.js",
       "imports": [
         "/build/_shared/chunk-XLW3IBII.js",
         "/build/_shared/chunk-T5QMIDXH.js",
@@ -30,7 +30,7 @@
       "parentId": "root",
       "path": "agb",
       "index": true,
-      "module": "/build/routes/agb/index-RQWROATH.js",
+      "module": "/build/routes/agb/index-22HLM6SJ.js",
       "hasAction": false,
       "hasLoader": false,
       "hasCatchBoundary": false,
@@ -40,7 +40,7 @@
       "id": "routes/blog/$slug",
       "parentId": "root",
       "path": "blog/:slug",
-      "module": "/build/routes/blog/$slug-GFS352Y3.js",
+      "module": "/build/routes/blog/$slug-FD5V6VCB.js",
       "imports": [
         "/build/_shared/chunk-SEKF6NRR.js",
         "/build/_shared/chunk-OXX3JWLK.js"
@@ -55,7 +55,7 @@
       "parentId": "root",
       "path": "blog",
       "index": true,
-      "module": "/build/routes/blog/index-JEHFKE4J.js",
+      "module": "/build/routes/blog/index-3KXOTFJZ.js",
       "imports": [
         "/build/_shared/chunk-DZLYDGUC.js",
         "/build/_shared/chunk-OXX3JWLK.js"
@@ -70,7 +70,7 @@
       "parentId": "root",
       "path": "datenschutz",
       "index": true,
-      "module": "/build/routes/datenschutz/index-3J2Q5TBK.js",
+      "module": "/build/routes/datenschutz/index-EGWQQGCT.js",
       "hasAction": false,
       "hasLoader": false,
       "hasCatchBoundary": false,
@@ -81,7 +81,7 @@
       "parentId": "root",
       "path": "impressum",
       "index": true,
-      "module": "/build/routes/impressum/index-3D7OT7M6.js",
+      "module": "/build/routes/impressum/index-UEHXSNQB.js",
       "hasAction": false,
       "hasLoader": false,
       "hasCatchBoundary": false,
@@ -91,7 +91,7 @@
       "id": "routes/index",
       "parentId": "root",
       "index": true,
-      "module": "/build/routes/index-PGKI46R4.js",
+      "module": "/build/routes/index-55U7NMSR.js",
       "imports": [
         "/build/_shared/chunk-47UMYF3U.js",
         "/build/_shared/chunk-SEKF6NRR.js",
@@ -107,7 +107,7 @@
       "parentId": "root",
       "path": "setTheme",
       "index": true,
-      "module": "/build/routes/setTheme/index-CMUWMGBE.js",
+      "module": "/build/routes/setTheme/index-2C6XNU64.js",
       "imports": [
         "/build/_shared/chunk-47UMYF3U.js"
       ],
@@ -117,5 +117,5 @@
       "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-B7208FE1.js"
+  "url": "/build/manifest-B502DD35.js"
 }
