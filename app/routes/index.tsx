@@ -47,7 +47,6 @@ import {
 } from "~/utils/functions";
 import { contactFormHtmlId } from "~/constants";
 import ReactGA from "react-ga";
-import ScrollShow from "~/sections/ScrollShow/ScrollShow";
 import Cookie from "~/components/Cookie/Cookie";
 import CookieConsent from "react-cookie-consent";
 
