@@ -1,15 +1,9 @@
-FROM node:14 AS builder
+FROM node:14
 
 WORKDIR /app
 
 COPY . .
 
-RUN npm run build
+EXPOSE 8000
 
-FROM nginx:alpine
-
-WORKDIR /usr/share/nginx/html
-
-COPY --from=builder public .
-
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["npm", "run", "dev"]
