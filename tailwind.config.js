@@ -1,5 +1,6 @@
 module.exports = {
-  content: ["./app/**/*.{ts,tsx,jsx,js}"],
+  purge: ["./app/**/*.{ts,tsx,jsx,js}"],
+  mode: "jit",
   module: {
     rules: [
       {

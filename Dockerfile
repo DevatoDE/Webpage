@@ -1,9 +1,12 @@
 FROM node:14
 
-WORKDIR /app
+WORKDIR /Users/flo/Development/Webpage/app
 
-COPY . .
+COPY ./package.json ./
+RUN npm install
+COPY ./ .
+RUN npm run dev
 
-EXPOSE 8000
+ENV NODE_ENV=production
 
 CMD ["npm", "run", "dev"]
