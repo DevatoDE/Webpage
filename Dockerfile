@@ -10,6 +10,6 @@ FROM nginx:alpine
 
 WORKDIR /usr/share/nginx/html
 
-COPY --from=builder public/build/ .
+COPY --from=builder public .
 
 CMD ["nginx", "-g", "daemon off;"]
