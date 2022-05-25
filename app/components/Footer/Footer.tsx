@@ -10,15 +10,15 @@ const Footer: React.FC = ({}) => {
 <div className="md:flex md:justify-between">
 <div className="mb-6 md:mb-0">
 <a href="https://devato.de" className="flex items-center">
-<img src="./images/devato-logo-white.png" className="mr-3 h-8" alt="Logo"></img>
+<img src="./images/devato-logo-white.png" className="mr-3 h-10" alt="Logo"></img>
 <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span>
 </a>
 </div>
-<div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+<div className="grid grid-cols-2 gap-10 sm:gap-20 sm:grid-cols-3">
 <div>
 <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Ressourcen</h2>
 <ul className="text-gray-600 dark:text-gray-400">
-<li className="mb-4">
+<li className="mb-4 mr-5">
 <a href="https://devato.de/blog" className="hover:underline">Blog</a>
 </li>
 <li className="mb-4">

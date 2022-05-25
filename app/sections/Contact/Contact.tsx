@@ -29,12 +29,12 @@ const ContactTitle = () => {
 
   return (
     <svg
-      viewBox="0 0 500 110"
-      className={`${contactTitleClassname} contact-title`}
+      viewBox="0 0 900 110"
+      className={`${contactTitleClassname} contact-title xl:mt-10`}
       ref={setRef}
     >
-      <text textAnchor="middle" x="50%" y="90%" className="text-2xl">
-        Jetzt unverbindlich anfragen!
+      <text textAnchor="middle" x="50%" y="90%" className="text-7xl">
+        Kontakt
       </text>
     </svg>
   );
@@ -50,14 +50,13 @@ const ContactMeSection: React.FC<Props> = (props) => {
       ? "Sendet..."
       : transition.state === "loading"
       ? "Gesendet!"
-      : "Anfrage Senden";
+      : "Senden";
 
   return (
-    <div className="contact-wrapper flex flex-col items-center justify-center translate-y-[-1rem] xs:translate-y-0 xl:translate-y-[-1rem]">
+    <div className="contact-wrapper flex flex-col items-center justify-center translate-y-[-1rem] xs:translate-y-0 xl:translate-y-[-5rem]">
       <ContactTitle />
-     
-      <div className="contact-form-wrapper w-full custom2:w-[90%] sm:w-4/5 md:w-2/3 lg:w-1/2 pb-20">
-
+      <div className="spacer-div mt-10"></div>
+      <div className="contact-form-wrapper w-full custom2:w-[90%] sm:w-4/5 md:w-2/3 lg:w-1/2">
         <Form
           id={contactFormHtmlId}
           method="post"
@@ -66,23 +65,23 @@ const ContactMeSection: React.FC<Props> = (props) => {
         >
           {hasError ? (
             <Alert
-              message={"Leider ist etwas schief gelaufen. Bitte nochmal versuchen!"}
+              message={"Senden fehlgeschlagen. Bitte versuchen Sie es erneut oder schreiben Sie eine Mail an info@devato.de."}
               type={AlertType.ERROR}
             />
           ) : hasSuccess ? (
             <Alert
-              message={"Wir haben Ihre Anfrage erhalten!"}
+              message={"Wir haben Ihre Anfrage erhalten und kommen bald auf Sie zurück!"}
               type={AlertType.CONFIRMED}
             />
           ) : (
-            <Alert message={"Wir antworten meist innerhalb von 2 Werktagen."} type={AlertType.CONFIRMED} />
+            <Alert message={"Wir antworten meist innerhalb von 2 Werkatagen."} type={AlertType.CONFIRMED} />
           )}
 
           <label
             htmlFor={ContactFormFields.name}
             className="text-base pt-2 pb-1"
           >
-            Ihr (Unternehmens-) Name
+            Ihr Name
           </label>
           <input
             id={ContactFormFields.name}
@@ -98,7 +97,7 @@ const ContactMeSection: React.FC<Props> = (props) => {
             htmlFor={ContactFormFields.email}
             className="text-base pt-2 pb-1"
           >
-            Email Adresse
+            Ihre Email
           </label>
           <input
             id={ContactFormFields.email}
@@ -114,7 +113,7 @@ const ContactMeSection: React.FC<Props> = (props) => {
             htmlFor={ContactFormFields.subject}
             className="text-textLgcolor text-base pt-2 pb-1"
           >
-            Betreff oder Projektidee
+            Betreff
           </label>
           <input
             id={ContactFormFields.subject}
@@ -149,14 +148,10 @@ const ContactMeSection: React.FC<Props> = (props) => {
             {buttonText}
           </button>
         </Form>
-
-
       </div>
-      <div className="text-textLgColor flex justify-center mb-100 mt-6">
+      <div className="text-textLgColor flex justify-center mt-6 mb-10">
         <SocialMedia />
       </div>
-      <div className="spacer-div mt-10 mb-20"></div>
-
     </div>
   );
 };
