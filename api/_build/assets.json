@@ -1,5 +1,5 @@
 {
-  "version": "0b6dbfc6",
+  "version": "2a15bd28",
   "entry": {
     "module": "/build/entry.client-55JO2ZCZ.js",
     "imports": [
@@ -55,7 +55,7 @@
       "parentId": "root",
       "path": "blog",
       "index": true,
-      "module": "/build/routes/blog/index-3KXOTFJZ.js",
+      "module": "/build/routes/blog/index-P6MX35I5.js",
       "imports": [
         "/build/_shared/chunk-DZLYDGUC.js",
         "/build/_shared/chunk-OXX3JWLK.js"
@@ -117,5 +117,5 @@
       "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-0B6DBFC6.js"
+  "url": "/build/manifest-2A15BD28.js"
 }
