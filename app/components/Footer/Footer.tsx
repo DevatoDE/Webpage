@@ -14,7 +14,7 @@ const Footer: React.FC = ({}) => {
 <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span>
 </a>
 </div>
-<div className="grid grid-cols-2 gap-10 sm:gap-20 sm:grid-cols-3">
+<div className="grid grid-cols-2 gap-20 sm:gap-20 sm:grid-cols-3">
 <div>
 <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Ressourcen</h2>
 <ul className="text-gray-600 dark:text-gray-400">
@@ -53,9 +53,7 @@ const Footer: React.FC = ({}) => {
 <li className="mb-4">
 <a href="/datenschutz" className="hover:underline">Datenschutz</a>
 </li>
-<li>
-<a href="/agb" className="hover:underline">AGB</a>
-</li>
+
 </ul>
 </div>
 </div>

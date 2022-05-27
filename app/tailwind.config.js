@@ -49333,8 +49333,8 @@ Ensure the default browser behavior of the `hidden` attribute.
     justify-content: space-between;
   }
 
-  .sm\:gap-6 {
-    gap: 1.5rem;
+  .sm\:gap-20 {
+    gap: 5rem;
   }
 
   .sm\:gap-5 {
@@ -49343,10 +49343,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .sm\:gap-10 {
     gap: 2.5rem;
-  }
-
-  .sm\:gap-20 {
-    gap: 5rem;
   }
 
   .sm\:gap-x-7 {
@@ -49821,10 +49817,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-bottom: 2.5rem;
   }
 
-  .xl\:mt-20 {
-    margin-top: 5rem;
-  }
-
   .xl\:mt-10 {
     margin-top: 2.5rem;
   }
@@ -49855,11 +49847,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .xl\:translate-x-\[15rem\] {
     --tw-translate-x: 15rem;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
-  .xl\:translate-y-\[-1rem\] {
-    --tw-translate-y: -1rem;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
