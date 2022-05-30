@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../../app/components/Blog/BlogPostTags.tsx"],
-  "sourcesContent": ["import { TagLink } from \"contentful\";\nimport * as React from \"react\";\nimport { tags } from \"~/constants\";\n\ninterface Props {\n  tags: TagLink[];\n}\n\nexport const tagIdsToDisplayNames = tags.reduce<Record<string, string>>(\n  (acc, cur) => {\n    acc[cur.id] = cur.name;\n    return acc;\n  },\n  {}\n);\n\nconst BlogPostTags: React.FC<Props> = (props) => {\n  const blogPostTags = props.tags;\n  return (\n    <div className=\"PostCard__TagsWrapper pt-2 pb-4 w-full overflow-hidden\">\n      {blogPostTags.map((tag) => {\n        const title =\n          tagIdsToDisplayNames[\n            tag.sys.id\n          ]; /** Lookup in the `tags` constant. */\n\n        return (\n          <span\n            key={tag.sys.id}\n            className=\"PostCard__Tag inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600 mr-2\"\n          >\n            #{title}\n          </span>\n        );\n      })}\n    </div>\n  );\n};\n\nexport default BlogPostTags;\n"],
-  "mappings": ";;;;;;;;;;AAAA;AACA,YAAuB;AAOhB,IAAM,uBAAuB,KAAK,OACvC,CAAC,KAAK,QAAQ;AACZ,MAAI,IAAI,MAAM,IAAI;AAClB,SAAO;AAAA,GAET;AAGF,IAAM,eAAgC,CAAC,UAAU;AAC/C,QAAM,eAAe,MAAM;AAC3B,SACE,oCAAC,OAAD;AAAA,IAAK,WAAU;AAAA,KACZ,aAAa,IAAI,CAAC,QAAQ;AACzB,UAAM,QACJ,qBACE,IAAI,IAAI;AAGZ,WACE,oCAAC,QAAD;AAAA,MACE,KAAK,IAAI,IAAI;AAAA,MACb,WAAU;AAAA,OACX,KACG;AAAA;AAAA;AAQd,IAAO,uBAAQ;",
-  "names": []
-}

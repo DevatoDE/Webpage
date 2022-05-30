@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["browser-route-module:/Users/flo/Development/Devato/app/routes/agb/index.tsx?browser"],
-  "sourcesContent": ["export * from \"/Users/flo/Development/Devato/app/routes/agb/index.tsx\";"],
-  "mappings": ";;;;;AAAA;",
-  "names": []
-}

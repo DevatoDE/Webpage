@@ -35,41 +35,127 @@ var __objRest = (source, exclude) => {
   return target;
 };
 var __esm = (fn, res) => function __init() {
-  return fn && (res = (0, fn[Object.keys(fn)[0]])(fn = 0)), res;
+  return fn && (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
 };
 var __commonJS = (cb, mod) => function __require() {
-  return mod || (0, cb[Object.keys(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+  return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
 };
 var __export = (target, all) => {
-  __markAsModule(target);
   for (var name in all)
     __defProp(target, name, { get: all[name], enumerable: true });
 };
-var __reExport = (target, module2, desc) => {
+var __reExport = (target, module2, copyDefault, desc) => {
   if (module2 && typeof module2 === "object" || typeof module2 === "function") {
     for (let key of __getOwnPropNames(module2))
-      if (!__hasOwnProp.call(target, key) && key !== "default")
+      if (!__hasOwnProp.call(target, key) && (copyDefault || key !== "default"))
         __defProp(target, key, { get: () => module2[key], enumerable: !(desc = __getOwnPropDesc(module2, key)) || desc.enumerable });
   }
   return target;
 };
-var __toModule = (module2) => {
-  return __reExport(__markAsModule(__defProp(module2 != null ? __create(__getProtoOf(module2)) : {}, "default", module2 && module2.__esModule && "default" in module2 ? { get: () => module2.default, enumerable: true } : { value: module2, enumerable: true })), module2);
+var __toESM = (module2, isNodeMode) => {
+  return __reExport(__markAsModule(__defProp(module2 != null ? __create(__getProtoOf(module2)) : {}, "default", !isNodeMode && module2 && module2.__esModule ? { get: () => module2.default, enumerable: true } : { value: module2, enumerable: true })), module2);
 };
+var __toCommonJS = /* @__PURE__ */ ((cache) => {
+  return (module2, temp) => {
+    return cache && cache.get(module2) || (temp = __reExport(__markAsModule({}), module2, 1), cache && cache.set(module2, temp), temp);
+  };
+})(typeof WeakMap !== "undefined" ? /* @__PURE__ */ new WeakMap() : 0);
 
 // node_modules/@remix-run/dev/compiler/shims/react.ts
 var React;
 var init_react = __esm({
   "node_modules/@remix-run/dev/compiler/shims/react.ts"() {
-    React = __toModule(require("react"));
+    React = __toESM(require("react"));
   }
 });
 
-// node_modules/remix/client.js
-var require_client = __commonJS({
-  "node_modules/remix/client.js"(exports) {
-    init_react();
+// node_modules/remix/index.js
+var require_remix = __commonJS({
+  "node_modules/remix/index.js"(exports) {
     "use strict";
+    init_react();
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var node = require("@remix-run/node");
+    Object.defineProperty(exports, "createCookie", {
+      enumerable: true,
+      get: function() {
+        return node.createCookie;
+      }
+    });
+    Object.defineProperty(exports, "createCookieSessionStorage", {
+      enumerable: true,
+      get: function() {
+        return node.createCookieSessionStorage;
+      }
+    });
+    Object.defineProperty(exports, "createFileSessionStorage", {
+      enumerable: true,
+      get: function() {
+        return node.createFileSessionStorage;
+      }
+    });
+    Object.defineProperty(exports, "createMemorySessionStorage", {
+      enumerable: true,
+      get: function() {
+        return node.createMemorySessionStorage;
+      }
+    });
+    Object.defineProperty(exports, "createSessionStorage", {
+      enumerable: true,
+      get: function() {
+        return node.createSessionStorage;
+      }
+    });
+    Object.defineProperty(exports, "unstable_createFileUploadHandler", {
+      enumerable: true,
+      get: function() {
+        return node.unstable_createFileUploadHandler;
+      }
+    });
+    Object.defineProperty(exports, "unstable_createMemoryUploadHandler", {
+      enumerable: true,
+      get: function() {
+        return node.unstable_createMemoryUploadHandler;
+      }
+    });
+    Object.defineProperty(exports, "unstable_parseMultipartFormData", {
+      enumerable: true,
+      get: function() {
+        return node.unstable_parseMultipartFormData;
+      }
+    });
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var serverRuntime = require("@remix-run/server-runtime");
+    Object.defineProperty(exports, "createSession", {
+      enumerable: true,
+      get: function() {
+        return serverRuntime.createSession;
+      }
+    });
+    Object.defineProperty(exports, "isCookie", {
+      enumerable: true,
+      get: function() {
+        return serverRuntime.isCookie;
+      }
+    });
+    Object.defineProperty(exports, "isSession", {
+      enumerable: true,
+      get: function() {
+        return serverRuntime.isSession;
+      }
+    });
+    Object.defineProperty(exports, "json", {
+      enumerable: true,
+      get: function() {
+        return serverRuntime.json;
+      }
+    });
+    Object.defineProperty(exports, "redirect", {
+      enumerable: true,
+      get: function() {
+        return serverRuntime.redirect;
+      }
+    });
     Object.defineProperty(exports, "__esModule", { value: true });
     var react = require("@remix-run/react");
     Object.defineProperty(exports, "Form", {
@@ -261,149 +347,16 @@ var require_client = __commonJS({
   }
 });
 
-// node_modules/remix/server.js
-var require_server = __commonJS({
-  "node_modules/remix/server.js"(exports) {
-    init_react();
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    var serverRuntime = require("@remix-run/server-runtime");
-    Object.defineProperty(exports, "createCookie", {
-      enumerable: true,
-      get: function() {
-        return serverRuntime.createCookie;
-      }
-    });
-    Object.defineProperty(exports, "createCookieSessionStorage", {
-      enumerable: true,
-      get: function() {
-        return serverRuntime.createCookieSessionStorage;
-      }
-    });
-    Object.defineProperty(exports, "createMemorySessionStorage", {
-      enumerable: true,
-      get: function() {
-        return serverRuntime.createMemorySessionStorage;
-      }
-    });
-    Object.defineProperty(exports, "createSession", {
-      enumerable: true,
-      get: function() {
-        return serverRuntime.createSession;
-      }
-    });
-    Object.defineProperty(exports, "createSessionStorage", {
-      enumerable: true,
-      get: function() {
-        return serverRuntime.createSessionStorage;
-      }
-    });
-    Object.defineProperty(exports, "isCookie", {
-      enumerable: true,
-      get: function() {
-        return serverRuntime.isCookie;
-      }
-    });
-    Object.defineProperty(exports, "isSession", {
-      enumerable: true,
-      get: function() {
-        return serverRuntime.isSession;
-      }
-    });
-    Object.defineProperty(exports, "json", {
-      enumerable: true,
-      get: function() {
-        return serverRuntime.json;
-      }
-    });
-    Object.defineProperty(exports, "redirect", {
-      enumerable: true,
-      get: function() {
-        return serverRuntime.redirect;
-      }
-    });
-  }
-});
-
-// node_modules/remix/platform.js
-var require_platform = __commonJS({
-  "node_modules/remix/platform.js"(exports) {
-    init_react();
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    var node = require("@remix-run/node");
-    Object.defineProperty(exports, "createFileSessionStorage", {
-      enumerable: true,
-      get: function() {
-        return node.createFileSessionStorage;
-      }
-    });
-    Object.defineProperty(exports, "unstable_createFileUploadHandler", {
-      enumerable: true,
-      get: function() {
-        return node.unstable_createFileUploadHandler;
-      }
-    });
-    Object.defineProperty(exports, "unstable_createMemoryUploadHandler", {
-      enumerable: true,
-      get: function() {
-        return node.unstable_createMemoryUploadHandler;
-      }
-    });
-    Object.defineProperty(exports, "unstable_parseMultipartFormData", {
-      enumerable: true,
-      get: function() {
-        return node.unstable_parseMultipartFormData;
-      }
-    });
-  }
-});
-
-// node_modules/remix/index.js
-var require_remix = __commonJS({
-  "node_modules/remix/index.js"(exports) {
-    init_react();
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    var client = require_client();
-    var server = require_server();
-    var platform = require_platform();
-    Object.keys(client).forEach(function(k) {
-      if (k !== "default" && !exports.hasOwnProperty(k))
-        Object.defineProperty(exports, k, {
-          enumerable: true,
-          get: function() {
-            return client[k];
-          }
-        });
-    });
-    Object.keys(server).forEach(function(k) {
-      if (k !== "default" && !exports.hasOwnProperty(k))
-        Object.defineProperty(exports, k, {
-          enumerable: true,
-          get: function() {
-            return server[k];
-          }
-        });
-    });
-    Object.keys(platform).forEach(function(k) {
-      if (k !== "default" && !exports.hasOwnProperty(k))
-        Object.defineProperty(exports, k, {
-          enumerable: true,
-          get: function() {
-            return platform[k];
-          }
-        });
-    });
-  }
-});
-
 // <stdin>
-__export(exports, {
-  assets: () => import_assets.default,
+var stdin_exports = {};
+__export(stdin_exports, {
+  assets: () => assets_manifest_default,
   entry: () => entry,
   routes: () => routes
 });
+init_react();
+
+// server-entry-module:@remix-run/dev/server-build
 init_react();
 
 // app/entry.server.tsx
@@ -412,9 +365,9 @@ __export(entry_server_exports, {
   default: () => handleRequest
 });
 init_react();
-var import_server = __toModule(require("react-dom/server"));
-var import_remix = __toModule(require_remix());
-var import_config = __toModule(require("dotenv/config"));
+var import_server = require("react-dom/server");
+var import_remix = __toESM(require_remix());
+var import_config = require("dotenv/config");
 function handleRequest(request, responseStatusCode, responseHeaders, remixContext) {
   const markup = (0, import_server.renderToString)(/* @__PURE__ */ React.createElement(import_remix.RemixServer, {
     context: remixContext,
@@ -427,7 +380,7 @@ function handleRequest(request, responseStatusCode, responseHeaders, remixContex
   });
 }
 
-// route-module:/Users/flo/Development/Webpage/app/root.tsx
+// route:/Users/flo/Development/Webpage-1/app/root.tsx
 var root_exports = {};
 __export(root_exports, {
   CatchBoundary: () => CatchBoundary,
@@ -437,7 +390,7 @@ __export(root_exports, {
   loader: () => loader
 });
 init_react();
-var import_remix6 = __toModule(require_remix());
+var import_remix6 = __toESM(require_remix());
 
 // app/tailwind.css
 var tailwind_default = "/build/_assets/tailwind-IJELHZCB.css";
@@ -445,42 +398,21 @@ var tailwind_default = "/build/_assets/tailwind-IJELHZCB.css";
 // app/styles/global.css
 var global_default = "/build/_assets/global-HE6OXUP5.css";
 
-// app/types.ts
-init_react();
-var AlertType;
-(function(AlertType2) {
-  AlertType2["ERROR"] = "error";
-  AlertType2["SUCCESS"] = "success";
-  AlertType2["CONFIRMED"] = "confirmed";
-})(AlertType || (AlertType = {}));
-var SupportedTheme;
-(function(SupportedTheme2) {
-  SupportedTheme2["DARK"] = "dark";
-  SupportedTheme2["LIGHT"] = "light";
-})(SupportedTheme || (SupportedTheme = {}));
-var ContactFormFields;
-(function(ContactFormFields2) {
-  ContactFormFields2["email"] = "Email";
-  ContactFormFields2["name"] = "Name";
-  ContactFormFields2["subject"] = "Betreff / Projekt";
-  ContactFormFields2["message"] = "Nachricht";
-})(ContactFormFields || (ContactFormFields = {}));
-
-// route-module:/Users/flo/Development/Webpage/app/root.tsx
-var React9 = __toModule(require("react"));
+// route:/Users/flo/Development/Webpage-1/app/root.tsx
+var React9 = __toESM(require("react"));
 
 // app/components/NavBar/NavBar.tsx
 init_react();
-var React6 = __toModule(require("react"));
-var import_remix4 = __toModule(require_remix());
+var React6 = __toESM(require("react"));
+var import_remix4 = __toESM(require_remix());
 
 // app/components/ThemeButton/ThemeButton.tsx
 init_react();
-var React4 = __toModule(require("react"));
+var React4 = __toESM(require("react"));
 
 // app/providers/ModalProvider.tsx
 init_react();
-var React2 = __toModule(require("react"));
+var React2 = __toESM(require("react"));
 var ModalContext = React2.createContext(void 0);
 var useModalContext = () => {
   const contextValue = React2.useContext(ModalContext);
@@ -515,7 +447,7 @@ var ModalContextProvider = (props) => {
 
 // app/providers/ThemeProvider.tsx
 init_react();
-var React3 = __toModule(require("react"));
+var React3 = __toESM(require("react"));
 var ThemeContext = React3.createContext(void 0);
 var useTheme = () => {
   const contextValue = React3.useContext(ThemeContext);
@@ -539,14 +471,14 @@ var ThemeContextProvider = (props) => {
 
 // app/components/ThemeButton/ThemeButton.tsx
 var getShadowClassName = (theme, hasStripeHeader) => {
-  if (theme === SupportedTheme.LIGHT) {
+  if (theme === "light" /* LIGHT */) {
     return hasStripeHeader ? "shadow-light-stripe" : "shadow-light";
   } else {
     return hasStripeHeader ? "shadow-dark-stripe" : "shadow-dark";
   }
 };
 var getClassName = (theme) => {
-  return theme === SupportedTheme.LIGHT ? "border-2 border-gray-400 hover:border-black" : "border-2 border-gray-400 hover:border-white";
+  return theme === "light" /* LIGHT */ ? "border-2 border-gray-400 hover:border-black" : "border-2 border-gray-400 hover:border-white";
 };
 var mobileSun = "/svg/mobileSun.svg";
 var ThemeButton = (props) => {
@@ -556,9 +488,9 @@ var ThemeButton = (props) => {
   const shadow = getShadowClassName(theme, props.hasStripeHeader);
   const className = getClassName(theme);
   const handleToggleTheme = (oldTheme) => {
-    updateTheme(oldTheme === SupportedTheme.DARK ? SupportedTheme.LIGHT : SupportedTheme.DARK);
+    updateTheme(oldTheme === "dark" /* DARK */ ? "light" /* LIGHT */ : "dark" /* DARK */);
   };
-  const nextTheme = theme === SupportedTheme.DARK ? SupportedTheme.LIGHT : SupportedTheme.DARK;
+  const nextTheme = theme === "dark" /* DARK */ ? "light" /* LIGHT */ : "dark" /* DARK */;
   const generateFormData = () => {
     const form = new FormData();
     form.append("theme", nextTheme);
@@ -580,7 +512,7 @@ var ThemeButton = (props) => {
     name: "Switch to dark theme",
     className: `theme-container ${shadow}`,
     onClick: () => toggleTheme(theme)
-  }, theme === SupportedTheme.LIGHT ? /* @__PURE__ */ React4.createElement("img", {
+  }, theme === "light" /* LIGHT */ ? /* @__PURE__ */ React4.createElement("img", {
     className: "theme-icon select-none",
     src: sun,
     alt: "Sun icon",
@@ -593,7 +525,7 @@ var ThemeButton = (props) => {
     name: "Switch to light mode",
     className: `rounded-full px-5 py-3 inline-flex items-center justify-center ${className}`,
     onClick: () => toggleTheme(theme)
-  }, theme === SupportedTheme.LIGHT ? /* @__PURE__ */ React4.createElement("div", {
+  }, theme === "light" /* LIGHT */ ? /* @__PURE__ */ React4.createElement("div", {
     className: "inline-flex items-center justify-center text-base"
   }, /* @__PURE__ */ React4.createElement("img", {
     className: "theme-icon select-none mr-4 w-5",
@@ -623,9 +555,9 @@ var ThemeButton_default = ThemeButton;
 var SimplifiedThemeButton = () => {
   const { theme, updateTheme } = useTheme();
   const handleToggleTheme = (oldTheme) => {
-    updateTheme(oldTheme === SupportedTheme.DARK ? SupportedTheme.LIGHT : SupportedTheme.DARK);
+    updateTheme(oldTheme === "dark" /* DARK */ ? "light" /* LIGHT */ : "dark" /* DARK */);
   };
-  const nextTheme = theme === SupportedTheme.DARK ? SupportedTheme.LIGHT : SupportedTheme.DARK;
+  const nextTheme = theme === "dark" /* DARK */ ? "light" /* LIGHT */ : "dark" /* DARK */;
   const generateFormData = () => {
     const form = new FormData();
     form.append("theme", nextTheme);
@@ -647,7 +579,7 @@ var SimplifiedThemeButton = () => {
     name: "light theme",
     className: `rounded-full px-5 py-3 inline-flex items-center justify-center `,
     onClick: () => toggleTheme(theme)
-  }, theme === SupportedTheme.LIGHT ? /* @__PURE__ */ React4.createElement("svg", {
+  }, theme === "light" /* LIGHT */ ? /* @__PURE__ */ React4.createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     className: "h-7 w-7 text-gray-600 hover:text-black ease-in duration-100",
     fill: "none",
@@ -697,7 +629,7 @@ var pomodoro_default = "/build/_assets/pomodoro-5X7SIOCR.png";
 var weather_default = "/build/_assets/weather-KIFYQBNS.png";
 
 // app/constants.tsx
-var import_fa = __toModule(require("react-icons/fa"));
+var import_fa = require("react-icons/fa");
 var IMAGE_WIDTH = "1200";
 var IMAGE_HEIGHT = "630";
 var PORTFOLIO_WEBSITE_NAME = "Devato | Shopify Development";
@@ -856,36 +788,6 @@ var tags = [
   { id: "databases", name: "databases" },
   { id: "shopify", name: "shopify" }
 ];
-var TEXT_HIGHLIGHT;
-(function(TEXT_HIGHLIGHT2) {
-  TEXT_HIGHLIGHT2["BLUE"] = "var(--blue)";
-  TEXT_HIGHLIGHT2["YELLOW"] = "var(--yellow)";
-  TEXT_HIGHLIGHT2["GREEN"] = "var(--green)";
-  TEXT_HIGHLIGHT2["RED"] = "var(--red)";
-  TEXT_HIGHLIGHT2["ORANGE"] = "var(--orange)";
-  TEXT_HIGHLIGHT2["PINK"] = "var(--pink)";
-  TEXT_HIGHLIGHT2["PURPLE"] = "var(--purple)";
-})(TEXT_HIGHLIGHT || (TEXT_HIGHLIGHT = {}));
-var STICKY_HIGHLIGHT;
-(function(STICKY_HIGHLIGHT2) {
-  STICKY_HIGHLIGHT2["BLUE"] = "rgba(75, 150, 255, 0.1)";
-  STICKY_HIGHLIGHT2["YELLOW"] = "var(--sticky-yellow-bg)";
-  STICKY_HIGHLIGHT2["GREEN"] = "var(--sticky-green-bg)";
-  STICKY_HIGHLIGHT2["ORANGE"] = "var(--sticky-orange-bg)";
-  STICKY_HIGHLIGHT2["PINK"] = "rgb(255, 69, 140, 0.1)";
-  STICKY_HIGHLIGHT2["PURPLE"] = "rgb(196, 69, 255, 0.1)";
-  STICKY_HIGHLIGHT2["RED"] = "rgba(255, 69, 69, 0.1)";
-})(STICKY_HIGHLIGHT || (STICKY_HIGHLIGHT = {}));
-var STICKY_BORDER;
-(function(STICKY_BORDER2) {
-  STICKY_BORDER2["BLUE"] = "rgba(75, 150, 255, 1)";
-  STICKY_BORDER2["YELLOW"] = "var(--sticky-yellow-border)";
-  STICKY_BORDER2["GREEN"] = "var(--sticky-green-border)";
-  STICKY_BORDER2["ORANGE"] = "var(--sticky-orange-border)";
-  STICKY_BORDER2["PINK"] = "rgb(255, 81, 148)";
-  STICKY_BORDER2["PURPLE"] = "rgb(203, 89, 255)";
-  STICKY_BORDER2["RED"] = "rgb(255, 69, 69)";
-})(STICKY_BORDER || (STICKY_BORDER = {}));
 var fixedWidthLayoutClasses = `relative max-w-screen-lg w-full text-3xl m-auto px-8 sm:px-12 lg:px-5 xl:px-0`;
 var skills = [
   {
@@ -1098,12 +1000,12 @@ var NAVBAR_ID = "Navbar";
 
 // app/components/NavBar/NavLink.tsx
 init_react();
-var import_remix2 = __toModule(require_remix());
+var import_remix2 = __toESM(require_remix());
 var getTextColorClassNameForNavLink = (hasStripeHeader, currentTheme) => {
-  if (currentTheme === SupportedTheme.DARK) {
+  if (currentTheme === "dark" /* DARK */) {
     return hasStripeHeader ? "text-white hover:text-cyan-300" : "text-gray-400 hover:text-white";
   }
-  if (currentTheme === SupportedTheme.LIGHT) {
+  if (currentTheme === "light" /* LIGHT */) {
     return hasStripeHeader ? "text-white hover:text-cyan-400" : "text-gray-400 hover:text-black";
   }
 };
@@ -1132,13 +1034,13 @@ var NavLink_default = NavLink;
 
 // app/components/NavBar/MobileMenu.tsx
 init_react();
-var import_menu_button2 = __toModule(require("@reach/menu-button"));
+var import_menu_button2 = require("@reach/menu-button");
 
 // app/components/NavBar/MobileMenuList.tsx
 init_react();
-var import_menu_button = __toModule(require("@reach/menu-button"));
-var import_framer_motion = __toModule(require("framer-motion"));
-var import_remix3 = __toModule(require_remix());
+var import_menu_button = require("@reach/menu-button");
+var import_framer_motion = require("framer-motion");
+var import_remix3 = __toESM(require_remix());
 var MobileMenuList = (props) => {
   const shouldReduceMotion = (0, import_framer_motion.useReducedMotion)();
   return /* @__PURE__ */ React.createElement(import_framer_motion.AnimatePresence, null, props.isExpanded ? /* @__PURE__ */ React.createElement(import_menu_button.MenuPopover, {
@@ -1174,15 +1076,15 @@ var MobileMenuList = (props) => {
 var MobileMenuList_default = MobileMenuList;
 
 // app/components/NavBar/MobileMenu.tsx
-var React5 = __toModule(require("react"));
+var React5 = __toESM(require("react"));
 var getClassName2 = (theme, hasStripeHeader, modalIsOpen) => {
   if (modalIsOpen) {
-    return theme === SupportedTheme.LIGHT ? "text-gray-400 hover:text-black border-gray-400 hover:border-black focus:border-black" : "text-gray-500 hover:text-white border-gray-500 hover:border-white focus:border-white";
+    return theme === "light" /* LIGHT */ ? "text-gray-400 hover:text-black border-gray-400 hover:border-black focus:border-black" : "text-gray-500 hover:text-white border-gray-500 hover:border-white focus:border-white";
   }
-  if (theme === SupportedTheme.LIGHT) {
+  if (theme === "light" /* LIGHT */) {
     return hasStripeHeader ? "text-blue-800 hover:text-white border-blue-800 hover:border-white focus:border-white" : "text-gray-400 hover:text-black border-gray-400 hover:border-black focus:border-black";
   }
-  if (theme === SupportedTheme.DARK) {
+  if (theme === "dark" /* DARK */) {
     return hasStripeHeader ? "text-blue-200 hover:text-white border-blue-200 hover:border-white focus:border-white" : "text-gray-500 hover:text-white border-gray-500 hover:border-white focus:border-white";
   }
 };
@@ -1285,12 +1187,12 @@ var NavLogo = (props) => {
 };
 var getLogoClassName = (hasStripeBg, theme, modalIsOpen) => {
   if (modalIsOpen) {
-    return theme === SupportedTheme.LIGHT ? "text-gray-500 hover:text-black" : "text-gray-400 hover:text-white";
+    return theme === "light" /* LIGHT */ ? "text-gray-500 hover:text-black" : "text-gray-400 hover:text-white";
   }
   if (hasStripeBg) {
-    return theme === SupportedTheme.LIGHT ? "text-cyan-100" : "text-cyan-200";
+    return theme === "light" /* LIGHT */ ? "text-cyan-100" : "text-cyan-200";
   }
-  return theme === SupportedTheme.LIGHT ? "text-gray-500 hover:text-black" : "text-gray-400 hover:text-white";
+  return theme === "light" /* LIGHT */ ? "text-gray-500 hover:text-black" : "text-gray-400 hover:text-white";
 };
 
 // app/components/NavBar/NavBar.css
@@ -1304,7 +1206,7 @@ var ThemeButton_default2 = "/build/_assets/ThemeButton-72VSPY3H.css";
 
 // app/components/Footer/Footer.tsx
 init_react();
-var React7 = __toModule(require("react"));
+var React7 = __toESM(require("react"));
 var Footer = ({}) => {
   return /* @__PURE__ */ React7.createElement("div", {
     className: "footer"
@@ -1448,14 +1350,14 @@ var Footer_default = Footer;
 
 // app/utils/theme.server.ts
 init_react();
-var import_remix5 = __toModule(require_remix());
+var import_remix5 = __toESM(require_remix());
 var sessionSecret = process.env.SESSION_SECRET;
 if (!sessionSecret) {
   throw new Error("SESSION_SECRET must be set");
 }
 var themeStorage = (0, import_remix5.createCookieSessionStorage)({
   cookie: {
-    name: "alissa_nguyen_dev_theme",
+    name: "flo_stanglmeier_theme",
     secure: true,
     secrets: [sessionSecret],
     sameSite: "lax",
@@ -1468,19 +1370,19 @@ async function getThemeSession(request) {
   return {
     getTheme: () => {
       const themeValue = session.get(THEME_COOKIE_KEY);
-      return isTheme(themeValue) ? themeValue : SupportedTheme.LIGHT;
+      return isTheme(themeValue) ? themeValue : "light" /* LIGHT */;
     },
     setTheme: (theme) => session.set(THEME_COOKIE_KEY, theme),
     commit: () => themeStorage.commitSession(session)
   };
 }
 var isTheme = (maybeTheme) => {
-  return maybeTheme === SupportedTheme.DARK || maybeTheme === SupportedTheme.LIGHT;
+  return maybeTheme === "dark" /* DARK */ || maybeTheme === "light" /* LIGHT */;
 };
 
 // app/components/Error/ErrorPage.tsx
 init_react();
-var React8 = __toModule(require("react"));
+var React8 = __toESM(require("react"));
 var ErrorPage = (props) => {
   const error = props.error;
   return /* @__PURE__ */ React8.createElement(React8.Fragment, null, /* @__PURE__ */ React8.createElement("main", null, error && false ? /* @__PURE__ */ React8.createElement(RedBox, {
@@ -1955,21 +1857,8 @@ var Flowers = () => {
   }))))));
 };
 
-// app/utils/ga.ts
-init_react();
-function injectGA() {
-  if (typeof window == "undefined") {
-    return;
-  }
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    window.dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
-  gtag("config", "G-4J0L3BTY29");
-}
-
-// route-module:/Users/flo/Development/Webpage/app/root.tsx
+// route:/Users/flo/Development/Webpage-1/app/root.tsx
+var import_ga = require("~/utils/ga.jsx");
 var links = () => {
   return [
     { rel: "stylesheet", href: tailwind_default },
@@ -2025,7 +1914,7 @@ var App = () => {
   }, /* @__PURE__ */ React9.createElement(ModalContextProvider, null, /* @__PURE__ */ React9.createElement(Document, null, /* @__PURE__ */ React9.createElement(Layout, null, /* @__PURE__ */ React9.createElement(import_remix6.Outlet, null)))));
 };
 var convertSupportedThemeToClassName = (theme, onBlogRoute) => {
-  if (theme === SupportedTheme.LIGHT) {
+  if (theme === "light" /* LIGHT */) {
     if (onBlogRoute) {
       return "light-theme light-theme-blog";
     }
@@ -2061,7 +1950,7 @@ var Document = (props) => {
   }) : null, /* @__PURE__ */ React9.createElement(import_remix6.Meta, null), /* @__PURE__ */ React9.createElement(import_remix6.Links, null), /* @__PURE__ */ React9.createElement("script", {
     async: true,
     src: "https://www.googletagmanager.com/gtag/js?id=G-4J0L3BTY29"
-  }), /* @__PURE__ */ React9.createElement("script", null, injectGA())), /* @__PURE__ */ React9.createElement("body", {
+  }), /* @__PURE__ */ React9.createElement("script", null, (0, import_ga.injectGA)())), /* @__PURE__ */ React9.createElement("body", {
     id: "root",
     className: `${modalIsOpen ? "overflow-hidden" : ""}`
   }, /* @__PURE__ */ React9.createElement("script", {
@@ -2137,7 +2026,7 @@ var CatchBoundary = (props) => {
 };
 var root_default = App;
 
-// route-module:/Users/flo/Development/Webpage/app/routes/datenschutz/index.tsx
+// route:/Users/flo/Development/Webpage-1/app/routes/datenschutz/index.tsx
 var datenschutz_exports = {};
 __export(datenschutz_exports, {
   default: () => datenschutz_default
@@ -2208,7 +2097,7 @@ var Index = () => {
 };
 var datenschutz_default = Index;
 
-// route-module:/Users/flo/Development/Webpage/app/routes/impressum/index.tsx
+// route:/Users/flo/Development/Webpage-1/app/routes/impressum/index.tsx
 var impressum_exports = {};
 __export(impressum_exports, {
   default: () => impressum_default
@@ -2261,14 +2150,14 @@ var Index2 = () => {
 };
 var impressum_default = Index2;
 
-// route-module:/Users/flo/Development/Webpage/app/routes/setTheme/index.tsx
+// route:/Users/flo/Development/Webpage-1/app/routes/setTheme/index.tsx
 var setTheme_exports = {};
 __export(setTheme_exports, {
   action: () => action,
   loader: () => loader2
 });
 init_react();
-var import_remix7 = __toModule(require_remix());
+var import_remix7 = __toESM(require_remix());
 var action = async ({ request }) => {
   const themeSession = await getThemeSession(request);
   const formData = await request.formData();
@@ -2290,7 +2179,7 @@ var loader2 = async () => {
   return (0, import_remix7.redirect)("/", { status: 404 });
 };
 
-// route-module:/Users/flo/Development/Webpage/app/routes/blog/$slug.tsx
+// route:/Users/flo/Development/Webpage-1/app/routes/blog/$slug.tsx
 var slug_exports = {};
 __export(slug_exports, {
   default: () => slug_default,
@@ -2299,12 +2188,12 @@ __export(slug_exports, {
   meta: () => meta
 });
 init_react();
-var React32 = __toModule(require("react"));
-var import_remix8 = __toModule(require_remix());
+var React32 = __toESM(require("react"));
+var import_remix8 = __toESM(require_remix());
 
 // app/contentful/contentfulClient.ts
 init_react();
-var import_contentful = __toModule(require("contentful"));
+var import_contentful = __toESM(require("contentful"));
 var GLOBAL_CONTENTFUL_CLIENT = null;
 var getGlobalContentfulClient = () => {
   if (!GLOBAL_CONTENTFUL_CLIENT) {
@@ -2348,17 +2237,17 @@ var getContentfulTags = async () => {
   return queryResults;
 };
 
-// route-module:/Users/flo/Development/Webpage/app/routes/blog/$slug.tsx
-var import_rich_text_react_renderer2 = __toModule(require("@contentful/rich-text-react-renderer"));
+// route:/Users/flo/Development/Webpage-1/app/routes/blog/$slug.tsx
+var import_rich_text_react_renderer2 = require("@contentful/rich-text-react-renderer");
 
 // app/contentful/defaultRichTextMarkdown.tsx
 init_react();
-var import_react2 = __toModule(require("react"));
-var import_rich_text_types2 = __toModule(require("@contentful/rich-text-types"));
+var import_react2 = __toESM(require("react"));
+var import_rich_text_types2 = require("@contentful/rich-text-types");
 
 // app/components/Contentful/EntryHyperLink/EntryHyperLink.tsx
 init_react();
-var React10 = __toModule(require("react"));
+var React10 = __toESM(require("react"));
 var EntryHyperLink = (props) => {
   const otherPostSlug = props.node.data.target.fields.blogPostSlug;
   return /* @__PURE__ */ React10.createElement("a", {
@@ -2370,19 +2259,19 @@ var EntryHyperLink_default = EntryHyperLink;
 
 // app/components/Contentful/HyperLink/HyperLink.tsx
 init_react();
-var React11 = __toModule(require("react"));
+var React11 = __toESM(require("react"));
 var HyperLink = (props) => {
   const { theme } = useTheme();
   return /* @__PURE__ */ React11.createElement("a", {
     href: props.url,
-    className: `BlogPost__HyperLink font-medium ${theme === SupportedTheme.LIGHT ? "text-blue-500 hover:text-black" : "text-cyan-400 hover:text-white"} ease-in duration-100`
+    className: `BlogPost__HyperLink font-medium ${theme === "light" /* LIGHT */ ? "text-blue-500 hover:text-black" : "text-cyan-400 hover:text-white"} ease-in duration-100`
   }, props.children);
 };
 var HyperLink_default = HyperLink;
 
 // app/components/Contentful/BlockQuote/BlockQuote.tsx
 init_react();
-var React12 = __toModule(require("react"));
+var React12 = __toESM(require("react"));
 
 // app/components/Contentful/BlockQuote/BlockQuote.css
 var BlockQuote_default = "/build/_assets/BlockQuote-TSCC4MNG.css";
@@ -2404,7 +2293,7 @@ var BlockQuote_default2 = BlockQuote;
 
 // app/components/Blog/BlogPostTags.tsx
 init_react();
-var React13 = __toModule(require("react"));
+var React13 = __toESM(require("react"));
 var tagIdsToDisplayNames = tags.reduce((acc, cur) => {
   acc[cur.id] = cur.name;
   return acc;
@@ -2425,7 +2314,7 @@ var BlogPostTags_default = BlogPostTags;
 
 // app/components/Contentful/ImageMedia/ImageMedia.tsx
 init_react();
-var React14 = __toModule(require("react"));
+var React14 = __toESM(require("react"));
 
 // app/components/Contentful/ImageMedia/ImageMedia.css
 var ImageMedia_default = "/build/_assets/ImageMedia-OZ3ERPQM.css";
@@ -2451,15 +2340,15 @@ var ImageMedia_default2 = ImageMedia;
 
 // app/components/Contentful/CodeBlock/CodeBlock.tsx
 init_react();
-var React15 = __toModule(require("react"));
+var React15 = __toESM(require("react"));
 
 // app/components/Contentful/CodeBlock/CodeBlock.css
 var CodeBlock_default = "/build/_assets/CodeBlock-BXX6PS7Q.css";
 
 // app/components/Contentful/CodeBlock/CodeBlock.tsx
-var import_prism_react_renderer = __toModule(require("prism-react-renderer"));
-var import_github = __toModule(require("prism-react-renderer/themes/github"));
-var import_vsDark = __toModule(require("prism-react-renderer/themes/vsDark"));
+var import_prism_react_renderer = __toESM(require("prism-react-renderer"));
+var import_github = __toESM(require("prism-react-renderer/themes/github"));
+var import_vsDark = __toESM(require("prism-react-renderer/themes/vsDark"));
 var links4 = () => {
   return [{ rel: "stylesheet", href: CodeBlock_default }];
 };
@@ -2470,7 +2359,7 @@ var CodeBlock = (props) => {
   return /* @__PURE__ */ React15.createElement("div", {
     className: "CodeBlock__Wrapper rounded-lg mt-3 mb-6"
   }, /* @__PURE__ */ React15.createElement(import_prism_react_renderer.default, __spreadProps(__spreadValues({}, import_prism_react_renderer.defaultProps), {
-    theme: theme === SupportedTheme.LIGHT ? import_github.default : import_vsDark.default,
+    theme: theme === "light" /* LIGHT */ ? import_github.default : import_vsDark.default,
     code: codeText,
     language
   }), ({ className, tokens, getLineProps, getTokenProps }) => {
@@ -2515,7 +2404,7 @@ var CodeBlock_default2 = CodeBlock;
 
 // app/components/Contentful/Heading/HeadingFive.tsx
 init_react();
-var React16 = __toModule(require("react"));
+var React16 = __toESM(require("react"));
 var HeadingFive = (props) => {
   return /* @__PURE__ */ React16.createElement("h6", {
     className: `BlogPost__HeadingFive text-xl custom2:text-2xl text-post-bodyTextLg mt-2 mb-1 font-medium`
@@ -2525,18 +2414,18 @@ var HeadingFive_default = HeadingFive;
 
 // app/components/Contentful/Heading/HeadingOne.tsx
 init_react();
-var React17 = __toModule(require("react"));
+var React17 = __toESM(require("react"));
 var HeadingOne = (props) => {
   const { theme } = useTheme();
   return /* @__PURE__ */ React17.createElement("h2", {
-    className: `BlogPost__HeadingOne text-4xl xs:text-5xl custom2:text-6xl mb-5 mt-5 font-medium ${theme === SupportedTheme.LIGHT ? "text-emerald-500" : "text-teal-400"}`
+    className: `BlogPost__HeadingOne text-4xl xs:text-5xl custom2:text-6xl mb-5 mt-5 font-medium ${theme === "light" /* LIGHT */ ? "text-emerald-500" : "text-teal-400"}`
   }, props.children);
 };
 var HeadingOne_default = HeadingOne;
 
 // app/components/Contentful/Heading/HeadingTwo.tsx
 init_react();
-var React18 = __toModule(require("react"));
+var React18 = __toESM(require("react"));
 var HeadingTwo = (props) => {
   return /* @__PURE__ */ React18.createElement("h3", {
     className: "BlogPost__HeadingTwo text-3xl xs:text-4xl custom2:text-[2.5rem] mt-8 mb-5 text-post-bodyTextLg"
@@ -2546,29 +2435,29 @@ var HeadingTwo_default = HeadingTwo;
 
 // app/components/Contentful/Heading/HeadingThree.tsx
 init_react();
-var React19 = __toModule(require("react"));
+var React19 = __toESM(require("react"));
 var HeadingThree = (props) => {
   const { theme } = useTheme();
   return /* @__PURE__ */ React19.createElement("h4", {
-    className: `BlogPost__HeadingThree text-2xl font-medium xs:font-normal xs:text-3xl custom2:text-4xl leading-10 mb-5 mt-10 ${theme === SupportedTheme.LIGHT ? "text-sky-600" : "text-sky-400"}`
+    className: `BlogPost__HeadingThree text-2xl font-medium xs:font-normal xs:text-3xl custom2:text-4xl leading-10 mb-5 mt-10 ${theme === "light" /* LIGHT */ ? "text-sky-600" : "text-sky-400"}`
   }, props.children);
 };
 var HeadingThree_default = HeadingThree;
 
 // app/components/Contentful/Heading/HeadingFour.tsx
 init_react();
-var React20 = __toModule(require("react"));
+var React20 = __toESM(require("react"));
 var HeadingFour = (props) => {
   const { theme } = useTheme();
   return /* @__PURE__ */ React20.createElement("h5", {
-    className: `BlogPost__HeadingFour text-2xl xs:text-3xl mt-10 ${theme === SupportedTheme.LIGHT ? "text-purple-500" : "text-fuchsia-400"} font-medium`
+    className: `BlogPost__HeadingFour text-2xl xs:text-3xl mt-10 ${theme === "light" /* LIGHT */ ? "text-purple-500" : "text-fuchsia-400"} font-medium`
   }, props.children);
 };
 var HeadingFour_default = HeadingFour;
 
 // app/components/Contentful/Heading/HeadingSix.tsx
 init_react();
-var React21 = __toModule(require("react"));
+var React21 = __toESM(require("react"));
 var HeadingSix = (props) => {
   return /* @__PURE__ */ React21.createElement("p", {
     className: `font-bold text-xl mb-5 mt-10 xs:font-medium`
@@ -2578,13 +2467,13 @@ var HeadingSix_default = HeadingSix;
 
 // app/components/Contentful/StickyNote/StickyNote.tsx
 init_react();
-var React24 = __toModule(require("react"));
-var import_rich_text_react_renderer = __toModule(require("@contentful/rich-text-react-renderer"));
+var React24 = __toESM(require("react"));
+var import_rich_text_react_renderer = require("@contentful/rich-text-react-renderer");
 
 // app/contentful/richTextMarkdownForStickies.tsx
 init_react();
-var import_react = __toModule(require("react"));
-var import_rich_text_types = __toModule(require("@contentful/rich-text-types"));
+var import_react = __toESM(require("react"));
+var import_rich_text_types = require("@contentful/rich-text-types");
 
 // app/contentful/contentfulUtils.tsx
 init_react();
@@ -2639,23 +2528,23 @@ var createSpanFromMatches = (matches, text, restProps = {}) => {
   ];
 };
 var contentfulHighlights = {
-  blue: TEXT_HIGHLIGHT.BLUE,
-  yellow: TEXT_HIGHLIGHT.YELLOW,
-  green: TEXT_HIGHLIGHT.GREEN,
-  red: TEXT_HIGHLIGHT.RED,
-  orange: TEXT_HIGHLIGHT.ORANGE,
-  pink: TEXT_HIGHLIGHT.PINK,
-  purple: TEXT_HIGHLIGHT.PURPLE
+  blue: "var(--blue)" /* BLUE */,
+  yellow: "var(--yellow)" /* YELLOW */,
+  green: "var(--green)" /* GREEN */,
+  red: "var(--red)" /* RED */,
+  orange: "var(--orange)" /* ORANGE */,
+  pink: "var(--pink)" /* PINK */,
+  purple: "var(--purple)" /* PURPLE */
 };
 
 // app/components/Contentful/Illustration/Illustration.tsx
 init_react();
-var React22 = __toModule(require("react"));
+var React22 = __toESM(require("react"));
 var Illustration = (props) => {
   const { theme } = useTheme();
   const lightModeIllustrationImageSrc = "https://" + props.rawData.lightIllustration.fields.file.url.split("//")[1];
   const darkModeIllustrationImageSrc = "https://" + props.rawData.darkIllustration.fields.file.url.split("//")[1];
-  const imageSrc = theme === SupportedTheme.DARK ? darkModeIllustrationImageSrc : lightModeIllustrationImageSrc;
+  const imageSrc = theme === "dark" /* DARK */ ? darkModeIllustrationImageSrc : lightModeIllustrationImageSrc;
   const padding = props.location === "inside sticky" ? "pt-3 pb-2" : "";
   return /* @__PURE__ */ React22.createElement("div", {
     className: `Illustration__Container rounded-lg ${padding}`
@@ -2668,7 +2557,7 @@ var Illustration = (props) => {
     alt: "Illustration for " + props.rawData.illustrationName,
     className: "Illustration__Image rounded-lg p-4",
     style: {
-      backgroundColor: `${theme === SupportedTheme.LIGHT ? "#ffffff" : "#0e0e0e"}`
+      backgroundColor: `${theme === "light" /* LIGHT */ ? "#ffffff" : "#0e0e0e"}`
     }
   })));
 };
@@ -2680,7 +2569,7 @@ var stickyOptions = {
     [import_rich_text_types.MARKS.BOLD]: (text) => {
       const { theme } = useTheme();
       return /* @__PURE__ */ import_react.default.createElement("span", {
-        className: `bold font-bold opacity-90 ${theme === SupportedTheme.LIGHT ? "text-black" : "text-white"}`
+        className: `bold font-bold opacity-90 ${theme === "light" /* LIGHT */ ? "text-black" : "text-white"}`
       }, addColour([text]));
     },
     [import_rich_text_types.MARKS.ITALIC]: (text) => {
@@ -2703,7 +2592,7 @@ var stickyOptions = {
     [import_rich_text_types.INLINES.HYPERLINK]: (node, children) => {
       const { theme } = useTheme();
       return /* @__PURE__ */ import_react.default.createElement("a", {
-        className: `BlogPost__HyperLink ${theme === SupportedTheme.DARK ? "text-cyan-200 hover:text-white" : "text-cyan-700 hover:text-black"}`,
+        className: `BlogPost__HyperLink ${theme === "dark" /* DARK */ ? "text-cyan-200 hover:text-white" : "text-cyan-700 hover:text-black"}`,
         href: node.data.uri
       }, children);
     },
@@ -2784,22 +2673,22 @@ var StickyNote = (props) => {
 };
 var StickyNote_default = StickyNote;
 var contentfulStickyBackgrounds = {
-  yellow: STICKY_HIGHLIGHT.YELLOW,
-  blue: STICKY_HIGHLIGHT.BLUE,
-  pink: STICKY_HIGHLIGHT.PINK,
-  green: STICKY_HIGHLIGHT.GREEN,
-  orange: STICKY_HIGHLIGHT.ORANGE,
-  purple: STICKY_HIGHLIGHT.PURPLE,
-  red: STICKY_HIGHLIGHT.RED
+  yellow: "var(--sticky-yellow-bg)" /* YELLOW */,
+  blue: "rgba(75, 150, 255, 0.1)" /* BLUE */,
+  pink: "rgb(255, 69, 140, 0.1)" /* PINK */,
+  green: "var(--sticky-green-bg)" /* GREEN */,
+  orange: "var(--sticky-orange-bg)" /* ORANGE */,
+  purple: "rgb(196, 69, 255, 0.1)" /* PURPLE */,
+  red: "rgba(255, 69, 69, 0.1)" /* RED */
 };
 var contentfulStickyBorders = {
-  yellow: STICKY_BORDER.YELLOW,
-  blue: STICKY_BORDER.BLUE,
-  pink: STICKY_BORDER.PINK,
-  green: STICKY_BORDER.GREEN,
-  orange: STICKY_BORDER.ORANGE,
-  purple: STICKY_BORDER.PURPLE,
-  red: STICKY_BORDER.RED
+  yellow: "var(--sticky-yellow-border)" /* YELLOW */,
+  blue: "rgba(75, 150, 255, 1)" /* BLUE */,
+  pink: "rgb(255, 81, 148)" /* PINK */,
+  green: "var(--sticky-green-border)" /* GREEN */,
+  orange: "var(--sticky-orange-border)" /* ORANGE */,
+  purple: "rgb(203, 89, 255)" /* PURPLE */,
+  red: "rgb(255, 69, 69)" /* RED */
 };
 
 // app/contentful/defaultRichTextMarkdown.tsx
@@ -2984,11 +2873,11 @@ var blogpost_default = "/build/_assets/blogpost-F5L2FXAW.css";
 
 // app/components/BlogPost/AuthorSection/AuthorSection.tsx
 init_react();
-var React26 = __toModule(require("react"));
-var import_solid = __toModule(require("@heroicons/react/solid"));
+var React26 = __toESM(require("react"));
+var import_solid = require("@heroicons/react/solid");
 var AuthorSection = ({}) => {
   const { theme } = useTheme();
-  const borderColor = theme === SupportedTheme.LIGHT ? "border-gray-400" : "border-gray-200";
+  const borderColor = theme === "light" /* LIGHT */ ? "border-gray-400" : "border-gray-200";
   return /* @__PURE__ */ React26.createElement("div", {
     className: `BlogPost__AuthorSection__Container border-t-2 ${borderColor} flex m-auto flex-col items-center justify-center sm:grid-cols-4 sm:gap-10 py-10`
   }, /* @__PURE__ */ React26.createElement("img", {
@@ -3032,11 +2921,11 @@ var getPostsAndTags = async () => {
 
 // app/components/BlogPost/RelatedPostsSection/RelatedPostsSection.tsx
 init_react();
-var React28 = __toModule(require("react"));
+var React28 = __toESM(require("react"));
 
 // app/components/BlogPost/RelatedPostsSection/RelatedPostCard.tsx
 init_react();
-var React27 = __toModule(require("react"));
+var React27 = __toESM(require("react"));
 var RelatedPostCard = (props) => {
   const rawDateData = new Date(props.post.sys.updatedAt).toDateString();
   const date = rawDateData.substring(rawDateData.indexOf(" ") + 1);
@@ -3092,11 +2981,11 @@ init_react();
 var FloatingHeader_default = "/build/_assets/FloatingHeader-VG2BC7U7.css";
 
 // app/components/FloatingHeader/FloatingHeader.tsx
-var React31 = __toModule(require("react"));
+var React31 = __toESM(require("react"));
 
 // app/components/FloatingHeader/ShareSection.tsx
 init_react();
-var React29 = __toModule(require("react"));
+var React29 = __toESM(require("react"));
 var ShareSection = (props) => {
   const tweetMsg = `I just read ${props.title} by @alissa_nguyen14
 
@@ -3187,7 +3076,7 @@ var ShareSection_default = ShareSection;
 
 // app/components/FloatingHeader/ProgressBar.tsx
 init_react();
-var React30 = __toModule(require("react"));
+var React30 = __toESM(require("react"));
 var ProgressBar = ({ progress }) => {
   return /* @__PURE__ */ React30.createElement("div", {
     className: `scroll-line`,
@@ -3200,7 +3089,7 @@ var ProgressBar = ({ progress }) => {
 var ProgressBar_default = ProgressBar;
 
 // app/components/FloatingHeader/FloatingHeader.tsx
-var import_bs = __toModule(require("react-icons/bs"));
+var import_bs = require("react-icons/bs");
 var links5 = () => {
   return [{ rel: "stylesheet", href: FloatingHeader_default }];
 };
@@ -3259,7 +3148,7 @@ var calculateShouldShowFloatingHeader = (amountScrolledInPixels, containerHeight
 };
 var FloatingHeader_default2 = FloatingHeader;
 
-// route-module:/Users/flo/Development/Webpage/app/routes/blog/$slug.tsx
+// route:/Users/flo/Development/Webpage-1/app/routes/blog/$slug.tsx
 var links6 = () => {
   return [
     {
@@ -3361,7 +3250,7 @@ var Post = ({}) => {
     href: "/blog",
     className: "go-back-btn inline-flex border-none items-center justify-start text-xl mb-10 hover:text-post-bodyTextLg duration-100 ease-in w-fit"
   }, /* @__PURE__ */ React32.createElement("img", {
-    src: theme === SupportedTheme.DARK ? "/svg/arrow.svg" : "/svg/arrowDark.svg",
+    src: theme === "dark" /* DARK */ ? "/svg/arrow.svg" : "/svg/arrowDark.svg",
     className: "go-back-arrow w-6 rounded-full mr-2 hover:text-post-bodyTextLg",
     alt: "go back",
     title: "Back"
@@ -3393,7 +3282,7 @@ var Post = ({}) => {
       return /* @__PURE__ */ React32.createElement("a", {
         target: "_blank",
         href: translationLink,
-        className: `translation-button px-4 pt-2 pb-3 sm:px-5 sm:pt-3 sm:pb-4 ${theme === SupportedTheme.LIGHT ? "bg-gray-100 text-black" : "bg-zinc-700 text-white"} rounded-full w-fit`
+        className: `translation-button px-4 pt-2 pb-3 sm:px-5 sm:pt-3 sm:pb-4 ${theme === "light" /* LIGHT */ ? "bg-gray-100 text-black" : "bg-zinc-700 text-white"} rounded-full w-fit`
       }, language);
     }
     return null;
@@ -3423,14 +3312,14 @@ var Post = ({}) => {
 var slug_default = Post;
 var TagBadge = (props) => {
   const tagName = tagIdsToDisplayNames[props.tag.sys.id];
-  return /* @__PURE__ */ React32.createElement(React32.Fragment, null, props.theme === SupportedTheme.LIGHT ? /* @__PURE__ */ React32.createElement("div", {
+  return /* @__PURE__ */ React32.createElement(React32.Fragment, null, props.theme === "light" /* LIGHT */ ? /* @__PURE__ */ React32.createElement("div", {
     className: "tag-badge bg-gray-600 before:bg-gray-600 hover:bg-gray-900 before:hover:bg-gray-900 text-gray-200 hover:text-white inline-flex items-center"
   }, tagName) : /* @__PURE__ */ React32.createElement("div", {
     className: "tag-badge tag-dark bg-gray-300 before:bg-gray-300 before:hover:bg-white hover:bg-white text-gray-700 hover:text-black inline-flex items-center"
   }, tagName));
 };
 
-// route-module:/Users/flo/Development/Webpage/app/routes/blog/index.tsx
+// route:/Users/flo/Development/Webpage-1/app/routes/blog/index.tsx
 var blog_exports = {};
 __export(blog_exports, {
   default: () => BlogPage,
@@ -3439,18 +3328,18 @@ __export(blog_exports, {
   meta: () => meta2
 });
 init_react();
-var import_remix9 = __toModule(require_remix());
-var React38 = __toModule(require("react"));
+var import_remix9 = __toESM(require_remix());
+var React38 = __toESM(require("react"));
 
 // app/components/Blog/BlogPostCard.tsx
 init_react();
-var React34 = __toModule(require("react"));
+var React34 = __toESM(require("react"));
 
 // app/components/Blog/CopyURLButton.tsx
 init_react();
-var React33 = __toModule(require("react"));
-var import_fi = __toModule(require("react-icons/fi"));
-var import_bs2 = __toModule(require("react-icons/bs"));
+var React33 = __toESM(require("react"));
+var import_fi = require("react-icons/fi");
+var import_bs2 = require("react-icons/bs");
 var CopyURLButton = (props) => {
   const buttonText = props.userRecentlyCopiedText ? "Copied" : "Copy URL";
   return /* @__PURE__ */ React33.createElement(React33.Fragment, null, /* @__PURE__ */ React33.createElement("button", {
@@ -3471,7 +3360,7 @@ var CopyURLButton = (props) => {
 var CopyURLButton_default = CopyURLButton;
 
 // app/components/Blog/BlogPostCard.tsx
-var import_md = __toModule(require("react-icons/md"));
+var import_md = require("react-icons/md");
 var BlogPostCard = (props) => {
   const blogPost = props.blogPost;
   const blogPostTags = blogPost.metadata.tags;
@@ -3525,13 +3414,13 @@ var BlogPostCard_default = BlogPostCard;
 
 // app/components/Blog/SearchBarSection.tsx
 init_react();
-var React36 = __toModule(require("react"));
-var import_outline = __toModule(require("@heroicons/react/outline"));
+var React36 = __toESM(require("react"));
+var import_outline = require("@heroicons/react/outline");
 
 // app/components/Blog/BlogIndexDecoration.tsx
 init_react();
-var React35 = __toModule(require("react"));
-var import_framer_motion2 = __toModule(require("framer-motion"));
+var React35 = __toESM(require("react"));
+var import_framer_motion2 = require("framer-motion");
 var BlogIndexDecoration = () => {
   return /* @__PURE__ */ React35.createElement(import_framer_motion2.motion.svg, {
     animate: { scale: 1, opacity: 1 },
@@ -5181,7 +5070,7 @@ var SearchBarSection_default = SearchBarSection;
 
 // app/components/Blog/TagsSection.tsx
 init_react();
-var React37 = __toModule(require("react"));
+var React37 = __toESM(require("react"));
 var TagsSection = (props) => {
   const { theme } = useTheme();
   return /* @__PURE__ */ React37.createElement("div", {
@@ -5204,7 +5093,7 @@ var TagsSection = (props) => {
 };
 var TagsSection_default = TagsSection;
 var TagBadge2 = (props) => {
-  const selectedClassName = props.theme === SupportedTheme.DARK ? "bg-white text-black" : "bg-black text-white";
+  const selectedClassName = props.theme === "dark" /* DARK */ ? "bg-white text-black" : "bg-black text-white";
   const disabledClassName = "opacity-25";
   return /* @__PURE__ */ React37.createElement("button", {
     name: "Filter for" + props.tag,
@@ -5220,8 +5109,8 @@ var TagBadge2 = (props) => {
 // app/components/Blog/Blog.css
 var Blog_default = "/build/_assets/Blog-PYOP7LTU.css";
 
-// route-module:/Users/flo/Development/Webpage/app/routes/blog/index.tsx
-var import_react_ga = __toModule(require("react-ga"));
+// route:/Users/flo/Development/Webpage-1/app/routes/blog/index.tsx
+var import_react_ga = __toESM(require("react-ga"));
 var loader4 = getPostsAndTags;
 var links7 = () => {
   return [
@@ -5262,7 +5151,7 @@ function BlogPage() {
   const { blogPosts, contentfulTags } = (0, import_remix9.useLoaderData)();
   const [searchInput, setSearchInput] = React38.useState("");
   const postCount = Object.keys(blogPosts.items).length;
-  const [selectedTagIds, setSelectedTagIds] = React38.useState(new Set([]));
+  const [selectedTagIds, setSelectedTagIds] = React38.useState(/* @__PURE__ */ new Set([]));
   React38.useEffect(() => {
     import_react_ga.default.pageview(window.location.pathname + window.location.search);
   }, []);
@@ -5295,7 +5184,7 @@ function BlogPage() {
       acc.add(tag.sys.id);
     });
     return acc;
-  }, new Set([]));
+  }, /* @__PURE__ */ new Set([]));
   const searchInputRegex = new RegExp(escapeSearchTermForRegularExpressionConstruction(searchInput), "i");
   const filteredBlogPostsByName = searchInput === "" ? filteredBlogPostsByTags : filteredBlogPostsByTags.filter((post) => {
     return searchInputRegex.test(post.fields.blogPostTitle);
@@ -5354,7 +5243,7 @@ var escapeSearchTermForRegularExpressionConstruction = (str) => {
   return str.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&");
 };
 
-// route-module:/Users/flo/Development/Webpage/app/routes/agb/index.tsx
+// route:/Users/flo/Development/Webpage-1/app/routes/agb/index.tsx
 var agb_exports = {};
 __export(agb_exports, {
   default: () => agb_default
@@ -5389,7 +5278,7 @@ var Index3 = () => {
 };
 var agb_default = Index3;
 
-// route-module:/Users/flo/Development/Webpage/app/routes/index.tsx
+// route:/Users/flo/Development/Webpage-1/app/routes/index.tsx
 var routes_exports = {};
 __export(routes_exports, {
   action: () => action2,
@@ -5398,16 +5287,16 @@ __export(routes_exports, {
   meta: () => meta3
 });
 init_react();
-var import_remix12 = __toModule(require_remix());
+var import_remix12 = __toESM(require_remix());
 
 // app/components/Decoration.tsx
 init_react();
-var React40 = __toModule(require("react"));
+var React40 = __toESM(require("react"));
 
 // app/hooks/useWasInViewAtLeastOnce.ts
 init_react();
-var React39 = __toModule(require("react"));
-var import_react_intersection_observer = __toModule(require("react-intersection-observer"));
+var React39 = __toESM(require("react"));
+var import_react_intersection_observer = require("react-intersection-observer");
 var useWasInViewAtLeastOnce = (options2) => {
   const [wasInViewAtLeastOnce, setWasInViewAtLeastOnce] = React39.useState(false);
   const { ref: setRef, inView } = (0, import_react_intersection_observer.useInView)(options2);
@@ -5599,8 +5488,8 @@ var Globe = () => {
 
 // app/components/ExternalLinkButton/ExternalLinkButton.tsx
 init_react();
-var import_react3 = __toModule(require("@nextui-org/react"));
-var React41 = __toModule(require("react"));
+var import_react3 = require("@nextui-org/react");
+var React41 = __toESM(require("react"));
 
 // app/components/ExternalLinkButton/ExternalLinkButton.css
 var ExternalLinkButton_default = "/build/_assets/ExternalLinkButton-HSYTIT2Y.css";
@@ -5654,15 +5543,15 @@ var ExternalLinkButton_default2 = ExternalLinkButton;
 
 // app/sections/AboutMe/AboutMe.tsx
 init_react();
-var React48 = __toModule(require("react"));
+var React48 = __toESM(require("react"));
 
 // app/sections/AboutMe/AboutMe.css
 var AboutMe_default = "/build/_assets/AboutMe-KOROGJM3.css";
 
 // app/sections/AboutMe/MyStory.tsx
 init_react();
-var React42 = __toModule(require("react"));
-var import_react4 = __toModule(require("@nextui-org/react"));
+var React42 = __toESM(require("react"));
+var import_react4 = require("@nextui-org/react");
 var MyStory = ({}) => {
   return /* @__PURE__ */ React42.createElement("div", {
     className: "my-story-wrapper flex flex-col items-baseline w-full text-textSmColor"
@@ -5736,7 +5625,7 @@ var MyselfCard2 = () => {
 
 // app/sections/AboutMe/Titles.tsx
 init_react();
-var React43 = __toModule(require("react"));
+var React43 = __toESM(require("react"));
 var Titles = ({}) => {
   return /* @__PURE__ */ React43.createElement("div", {
     className: "title-content text-aboutMe-aboutMeText"
@@ -5766,8 +5655,8 @@ var Titles_default = Titles;
 
 // app/sections/AboutMe/Hi.tsx
 init_react();
-var React44 = __toModule(require("react"));
-var import_use_typewriter_hook = __toModule(require("use-typewriter-hook"));
+var React44 = __toESM(require("react"));
+var import_use_typewriter_hook = require("use-typewriter-hook");
 var Hi = () => {
   const targetText = "Dein Partner f\xFCr Shopify\u{1F6CD}\uFE0F ";
   const { textValue: typedText, wrapperClassName } = (0, import_use_typewriter_hook.useTypewriter)({
@@ -5814,9 +5703,9 @@ var splitTargetText = (str, startIndex, endIndex) => {
 
 // app/sections/AboutMe/Facts.tsx
 init_react();
-var React45 = __toModule(require("react"));
-var import_react5 = __toModule(require("@headlessui/react"));
-var import_solid2 = __toModule(require("@heroicons/react/solid"));
+var React45 = __toESM(require("react"));
+var import_react5 = require("@headlessui/react");
+var import_solid2 = require("@heroicons/react/solid");
 var Facts = ({}) => {
   const { theme } = useTheme();
   return /* @__PURE__ */ React45.createElement("div", {
@@ -5839,8 +5728,8 @@ var Facts = ({}) => {
 };
 var Facts_default = Facts;
 var FactCard = (props) => {
-  const className = props.theme === SupportedTheme.LIGHT ? `text-${props.color}-900 bg-${props.color}-100 hover:bg-${props.color}-200 focus-visible:ring-${props.color}-500` : `text-${props.color}-100 bg-${props.color}-900 hover:bg-${props.color}-700 focus-visible:ring-${props.color}-500`;
-  const descriptionText = props.theme === SupportedTheme.LIGHT ? "text-gray-600" : "text-gray-300";
+  const className = props.theme === "light" /* LIGHT */ ? `text-${props.color}-900 bg-${props.color}-100 hover:bg-${props.color}-200 focus-visible:ring-${props.color}-500` : `text-${props.color}-100 bg-${props.color}-900 hover:bg-${props.color}-700 focus-visible:ring-${props.color}-500`;
+  const descriptionText = props.theme === "light" /* LIGHT */ ? "text-gray-600" : "text-gray-300";
   return /* @__PURE__ */ React45.createElement(import_react5.Disclosure, null, ({ open }) => /* @__PURE__ */ React45.createElement(React45.Fragment, null, /* @__PURE__ */ React45.createElement(import_react5.Disclosure.Button, {
     className: `Mobile__FactCard__Title__Btn flex justify-between items-center w-full px-4 py-2 font-medium text-left rounded-lg ${className} focus:outline-none focus-visible:ring focus-visible:ring-opacity-75`,
     name: open ? "close" : "open"
@@ -5860,7 +5749,7 @@ var FactCard = (props) => {
 
 // app/sections/AboutMe/Testimonials.tsx
 init_react();
-var React46 = __toModule(require("react"));
+var React46 = __toESM(require("react"));
 var Testimonials = ({}) => {
   return /* @__PURE__ */ React46.createElement("div", {
     className: "partner"
@@ -5901,11 +5790,11 @@ var Testimonials = ({}) => {
 var Testimonials_default = Testimonials;
 
 // app/sections/AboutMe/AboutMe.tsx
-var import_react6 = __toModule(require("@nextui-org/react"));
+var import_react6 = require("@nextui-org/react");
 
 // app/sections/AboutMe/Services.tsx
 init_react();
-var React47 = __toModule(require("react"));
+var React47 = __toESM(require("react"));
 var Services = () => {
   return /* @__PURE__ */ React47.createElement("section", {
     className: "pt-20 lg:pt-[120px] pb-12 lg:pb-[90px]"
@@ -6131,14 +6020,14 @@ var AboutMe_default2 = AboutMe;
 
 // app/sections/Contact/Contact.tsx
 init_react();
-var React51 = __toModule(require("react"));
-var import_remix10 = __toModule(require_remix());
+var React51 = __toESM(require("react"));
+var import_remix10 = __toESM(require_remix());
 
 // app/components/Alert.tsx
 init_react();
-var React49 = __toModule(require("react"));
+var React49 = __toESM(require("react"));
 var Alert = (props) => {
-  return /* @__PURE__ */ React49.createElement("div", null, props.type === AlertType.SUCCESS ? /* @__PURE__ */ React49.createElement("div", {
+  return /* @__PURE__ */ React49.createElement("div", null, props.type === "success" /* SUCCESS */ ? /* @__PURE__ */ React49.createElement("div", {
     className: "bg-green-100 p-5 w-full rounded"
   }, /* @__PURE__ */ React49.createElement("div", {
     className: "flex justify-between"
@@ -6158,7 +6047,7 @@ var Alert = (props) => {
     className: "flex-none fill-current text-green-600 h-3 w-3"
   }, /* @__PURE__ */ React49.createElement("path", {
     d: "M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"
-  })))) : props.type === AlertType.ERROR ? /* @__PURE__ */ React49.createElement("div", {
+  })))) : props.type === "error" /* ERROR */ ? /* @__PURE__ */ React49.createElement("div", {
     className: "bg-red-100 p-5 w-full"
   }, /* @__PURE__ */ React49.createElement("div", {
     className: "flex space-x-3"
@@ -6192,7 +6081,7 @@ var Alert_default = Alert;
 
 // app/components/SocialMedia/SocialMedia.tsx
 init_react();
-var React50 = __toModule(require("react"));
+var React50 = __toESM(require("react"));
 
 // app/components/SocialMedia/SocialMedia.css
 var SocialMedia_default = "/build/_assets/SocialMedia-SPTQH6WS.css";
@@ -6222,7 +6111,7 @@ var SocialMedia = ({}) => {
   }));
 };
 var getTextStyles = (theme) => {
-  return theme === SupportedTheme.LIGHT ? "text-black hover:text-white" : "text-white";
+  return theme === "light" /* LIGHT */ ? "text-black hover:text-white" : "text-white";
 };
 var SocialMedia_default2 = SocialMedia;
 
@@ -6268,52 +6157,52 @@ var ContactMeSection = (props) => {
     className: "contact-form flex flex-col text-contact-label w-full"
   }, hasError ? /* @__PURE__ */ React51.createElement(Alert_default, {
     message: "Senden fehlgeschlagen. Bitte versuchen Sie es erneut oder schreiben Sie eine Mail an info@devato.de.",
-    type: AlertType.ERROR
+    type: "error" /* ERROR */
   }) : hasSuccess ? /* @__PURE__ */ React51.createElement(Alert_default, {
     message: "Wir haben Ihre Anfrage erhalten und kommen bald auf Sie zur\xFCck!",
-    type: AlertType.CONFIRMED
+    type: "confirmed" /* CONFIRMED */
   }) : /* @__PURE__ */ React51.createElement(Alert_default, {
     message: "Wir antworten meist innerhalb von 2 Werkatagen.",
-    type: AlertType.CONFIRMED
+    type: "confirmed" /* CONFIRMED */
   }), /* @__PURE__ */ React51.createElement("label", {
-    htmlFor: ContactFormFields.name,
+    htmlFor: "Name" /* name */,
     className: "text-base pt-2 pb-1"
   }, "Ihr Name"), /* @__PURE__ */ React51.createElement("input", {
-    id: ContactFormFields.name,
-    name: ContactFormFields.name,
+    id: "Name" /* name */,
+    name: "Name" /* name */,
     type: "text",
     required: true,
     className: "appearance-none rounded-lg relative block w-full px-3 py-1"
   }), /* @__PURE__ */ React51.createElement("div", {
     className: "error"
   }, /* @__PURE__ */ React51.createElement("p", null, (fieldErrors == null ? void 0 : fieldErrors.name) && (fieldErrors == null ? void 0 : fieldErrors.name))), /* @__PURE__ */ React51.createElement("label", {
-    htmlFor: ContactFormFields.email,
+    htmlFor: "Email" /* email */,
     className: "text-base pt-2 pb-1"
   }, "Ihre Email"), /* @__PURE__ */ React51.createElement("input", {
-    id: ContactFormFields.email,
-    name: ContactFormFields.email,
+    id: "Email" /* email */,
+    name: "Email" /* email */,
     type: "email",
     required: true,
     className: "appearance-none rounded-lg relative block w-full px-3 py-1"
   }), /* @__PURE__ */ React51.createElement("div", {
     className: "error"
   }, /* @__PURE__ */ React51.createElement("p", null, (fieldErrors == null ? void 0 : fieldErrors.email) && (fieldErrors == null ? void 0 : fieldErrors.email))), /* @__PURE__ */ React51.createElement("label", {
-    htmlFor: ContactFormFields.subject,
+    htmlFor: "Betreff / Projekt" /* subject */,
     className: "text-textLgcolor text-base pt-2 pb-1"
   }, "Betreff"), /* @__PURE__ */ React51.createElement("input", {
-    id: ContactFormFields.subject,
-    name: ContactFormFields.subject,
+    id: "Betreff / Projekt" /* subject */,
+    name: "Betreff / Projekt" /* subject */,
     type: "text",
     required: true,
     className: "appearance-none rounded-lg relative block w-full px-3 py-2"
   }), /* @__PURE__ */ React51.createElement("div", {
     className: "error"
   }, /* @__PURE__ */ React51.createElement("p", null, (fieldErrors == null ? void 0 : fieldErrors.subject) && (fieldErrors == null ? void 0 : fieldErrors.subject))), /* @__PURE__ */ React51.createElement("label", {
-    htmlFor: ContactFormFields.message,
+    htmlFor: "Nachricht" /* message */,
     className: "text-textLgcolor text-base pt-2 pb-1"
   }, "Ihre Nachricht"), /* @__PURE__ */ React51.createElement("textarea", {
-    id: ContactFormFields.message,
-    name: ContactFormFields.message,
+    id: "Nachricht" /* message */,
+    name: "Nachricht" /* message */,
     required: true,
     className: "appearance-none rounded-lg relative block w-full px-3 py-1"
   }), /* @__PURE__ */ React51.createElement("div", {
@@ -6330,8 +6219,8 @@ var Contact_default2 = ContactMeSection;
 
 // app/sections/MySkills/MySkills.tsx
 init_react();
-var React52 = __toModule(require("react"));
-var import_animejs = __toModule(require("animejs"));
+var React52 = __toESM(require("react"));
+var import_animejs = __toESM(require("animejs"));
 
 // app/sections/MySkills/MySkills.css
 var MySkills_default = "/build/_assets/MySkills-INNCWRXU.css";
@@ -6438,8 +6327,8 @@ var Title = () => {
 
 // app/components/ResumeButton/ResumeButton.tsx
 init_react();
-var import_react7 = __toModule(require("@nextui-org/react"));
-var React53 = __toModule(require("react"));
+var import_react7 = require("@nextui-org/react");
+var React53 = __toESM(require("react"));
 
 // app/components/ResumeButton/ResumeButton.css
 var ResumeButton_default = "/build/_assets/ResumeButton-4ICFHR44.css";
@@ -6451,11 +6340,11 @@ var links13 = () => {
 
 // app/sections/Projects/Projects.tsx
 init_react();
-var React56 = __toModule(require("react"));
+var React56 = __toESM(require("react"));
 
 // app/sections/Projects/RecentProjects.tsx
 init_react();
-var React54 = __toModule(require("react"));
+var React54 = __toESM(require("react"));
 var RecentProjectsTitle = () => {
   const { setRef, wasInViewAtLeastOnce } = useWasInViewAtLeastOnce();
   const className = wasInViewAtLeastOnce ? "title-animation" : "";
@@ -6507,7 +6396,7 @@ var RecentProjects_default = RecentProjects;
 
 // app/sections/Projects/OtherProjects.tsx
 init_react();
-var React55 = __toModule(require("react"));
+var React55 = __toESM(require("react"));
 var OtherProjects = ({}) => {
   return /* @__PURE__ */ React55.createElement("div", {
     className: "others-wrapper text-textSmColor"
@@ -6571,12 +6460,12 @@ var Projects = ({}) => {
 };
 var Projects_default2 = Projects;
 
-// route-module:/Users/flo/Development/Webpage/app/routes/index.tsx
-var React57 = __toModule(require("react"));
+// route:/Users/flo/Development/Webpage-1/app/routes/index.tsx
+var React57 = __toESM(require("react"));
 
 // app/utils/functions.tsx
 init_react();
-var import_remix11 = __toModule(require_remix());
+var import_remix11 = __toESM(require_remix());
 function validateName(name) {
   if (typeof name !== "string") {
     return "Your name is not a string.";
@@ -6618,9 +6507,9 @@ function badRequest(data) {
   return (0, import_remix11.json)(data, { status: 400 });
 }
 
-// route-module:/Users/flo/Development/Webpage/app/routes/index.tsx
-var import_react_ga2 = __toModule(require("react-ga"));
-var import_react_cookie_consent = __toModule(require("react-cookie-consent"));
+// route:/Users/flo/Development/Webpage-1/app/routes/index.tsx
+var import_react_ga2 = __toESM(require("react-ga"));
+var import_react_cookie_consent = __toESM(require("react-cookie-consent"));
 var meta3 = () => {
   return {
     title: PORTFOLIO_WEBSITE_NAME,
@@ -6663,10 +6552,10 @@ var action2 = async ({
   request
 }) => {
   const formData = await request.formData();
-  const email = formData.get(ContactFormFields.email);
-  const subject = formData.get(ContactFormFields.subject);
-  const name = formData.get(ContactFormFields.name);
-  const message = formData.get(ContactFormFields.message);
+  const email = formData.get("Email" /* email */);
+  const subject = formData.get("Betreff / Projekt" /* subject */);
+  const name = formData.get("Name" /* name */);
+  const message = formData.get("Nachricht" /* message */);
   const fields = { subject, email, name, message };
   const fieldErrors = {
     name: validateName(name),
@@ -6783,8 +6672,11 @@ var Index4 = () => {
 };
 var routes_default = Index4;
 
-// <stdin>
-var import_assets = __toModule(require("./assets.json"));
+// server-assets-manifest:@remix-run/dev/assets-manifest
+init_react();
+var assets_manifest_default = { "version": "6118dfb2", "entry": { "module": "/build/entry.client-QQGFSQJY.js", "imports": ["/build/_shared/chunk-PZ2Z7HGX.js", "/build/_shared/chunk-NOP6RD6V.js", "/build/_shared/chunk-2ADOHOB6.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-CWRMOJKV.js", "imports": ["/build/_shared/chunk-TRDMDFFK.js", "/build/_shared/chunk-PRT6NESQ.js", "/build/_shared/chunk-O2ZYEK6Q.js", "/build/_shared/chunk-PRNJJ46C.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": true, "hasErrorBoundary": true }, "routes/agb/index": { "id": "routes/agb/index", "parentId": "root", "path": "agb", "index": true, "caseSensitive": void 0, "module": "/build/routes/agb/index-7PNPB5XM.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/blog/$slug": { "id": "routes/blog/$slug", "parentId": "root", "path": "blog/:slug", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/blog/$slug-3KYMSCRT.js", "imports": ["/build/_shared/chunk-5LPLTHXU.js", "/build/_shared/chunk-IW7HQTIW.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/blog/index": { "id": "routes/blog/index", "parentId": "root", "path": "blog", "index": true, "caseSensitive": void 0, "module": "/build/routes/blog/index-MZ737AOV.js", "imports": ["/build/_shared/chunk-LAPU6LJH.js", "/build/_shared/chunk-IW7HQTIW.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/datenschutz/index": { "id": "routes/datenschutz/index", "parentId": "root", "path": "datenschutz", "index": true, "caseSensitive": void 0, "module": "/build/routes/datenschutz/index-FZLTFHXI.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/impressum/index": { "id": "routes/impressum/index", "parentId": "root", "path": "impressum", "index": true, "caseSensitive": void 0, "module": "/build/routes/impressum/index-YRCDZATO.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-IX3JEF2Q.js", "imports": ["/build/_shared/chunk-5LPLTHXU.js", "/build/_shared/chunk-LAPU6LJH.js"], "hasAction": true, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/setTheme/index": { "id": "routes/setTheme/index", "parentId": "root", "path": "setTheme", "index": true, "caseSensitive": void 0, "module": "/build/routes/setTheme/index-HUUNC2IN.js", "imports": void 0, "hasAction": true, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-6118DFB2.js" };
+
+// server-entry-module:@remix-run/dev/server-build
 var entry = { module: entry_server_exports };
 var routes = {
   "root": {
@@ -6852,6 +6744,7 @@ var routes = {
     module: routes_exports
   }
 };
+module.exports = __toCommonJS(stdin_exports);
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   assets,
@@ -6859,7 +6752,7 @@ var routes = {
   routes
 });
 /**
- * @remix-run/node v1.1.3
+ * @remix-run/node v1.5.1
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -6869,7 +6762,7 @@ var routes = {
  * @license MIT
  */
 /**
- * @remix-run/react v1.1.3
+ * @remix-run/react v1.5.1
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -6879,17 +6772,7 @@ var routes = {
  * @license MIT
  */
 /**
- * @remix-run/server-runtime v1.1.3
- *
- * Copyright (c) Remix Software Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.md file in the root directory of this source tree.
- *
- * @license MIT
- */
-/**
- * remix v1.1.3
+ * @remix-run/server-runtime v1.5.1
  *
  * Copyright (c) Remix Software Inc.
  *
