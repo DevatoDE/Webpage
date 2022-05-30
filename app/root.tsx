@@ -28,7 +28,7 @@ import {
 } from "./providers/ModalProvider";
 import { getThemeSession } from "./utils/theme.server";
 import ErrorPage from "./components/Error/ErrorPage";
-import { injectGA } from "~/utils/ga.jsx";
+import { injectGA } from "~/utils/ga.ts";
 
 
 export const links: LinksFunction = () => {

@@ -1884,8 +1884,21 @@ var Flowers = () => {
   }))))));
 };
 
+// app/utils/ga.ts
+init_react();
+function injectGA() {
+  if (typeof window == "undefined") {
+    return;
+  }
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-4J0L3BTY29");
+}
+
 // route:/Users/flo/Development/Webpage-1/app/root.tsx
-var import_ga = require("~/utils/ga.jsx");
 var links = () => {
   return [
     { rel: "stylesheet", href: tailwind_default },
@@ -1977,7 +1990,7 @@ var Document = (props) => {
   }) : null, /* @__PURE__ */ React10.createElement(import_remix6.Meta, null), /* @__PURE__ */ React10.createElement(import_remix6.Links, null), /* @__PURE__ */ React10.createElement("script", {
     async: true,
     src: "https://www.googletagmanager.com/gtag/js?id=G-4J0L3BTY29"
-  }), /* @__PURE__ */ React10.createElement("script", null, (0, import_ga.injectGA)())), /* @__PURE__ */ React10.createElement("body", {
+  }), /* @__PURE__ */ React10.createElement("script", null, injectGA())), /* @__PURE__ */ React10.createElement("body", {
     id: "root",
     className: `${modalIsOpen ? "overflow-hidden" : ""}`
   }, /* @__PURE__ */ React10.createElement("script", {
@@ -6701,7 +6714,7 @@ var routes_default = Index4;
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
 init_react();
-var assets_manifest_default = { "version": "8e42df0b", "entry": { "module": "/build/entry.client-LA7AIDMN.js", "imports": ["/build/_shared/chunk-TF7DY7FC.js", "/build/_shared/chunk-JICL6E5E.js", "/build/_shared/chunk-XV23MX66.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-P4G4TFSG.js", "imports": ["/build/_shared/chunk-WUIWO6JA.js", "/build/_shared/chunk-534BSL5R.js", "/build/_shared/chunk-MKTFCWKP.js", "/build/_shared/chunk-JAMJANG6.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": true, "hasErrorBoundary": true }, "routes/agb/index": { "id": "routes/agb/index", "parentId": "root", "path": "agb", "index": true, "caseSensitive": void 0, "module": "/build/routes/agb/index-2QKTZLT5.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/blog/$slug": { "id": "routes/blog/$slug", "parentId": "root", "path": "blog/:slug", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/blog/$slug-NVEMK7CH.js", "imports": ["/build/_shared/chunk-K6LN7FR2.js", "/build/_shared/chunk-OJIJQVNW.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/blog/index": { "id": "routes/blog/index", "parentId": "root", "path": "blog", "index": true, "caseSensitive": void 0, "module": "/build/routes/blog/index-3Z3S3ZH6.js", "imports": ["/build/_shared/chunk-HWERMUKJ.js", "/build/_shared/chunk-OJIJQVNW.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/datenschutz/index": { "id": "routes/datenschutz/index", "parentId": "root", "path": "datenschutz", "index": true, "caseSensitive": void 0, "module": "/build/routes/datenschutz/index-PEIP26X7.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/impressum/index": { "id": "routes/impressum/index", "parentId": "root", "path": "impressum", "index": true, "caseSensitive": void 0, "module": "/build/routes/impressum/index-37QMG363.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-GKBZ7OWH.js", "imports": ["/build/_shared/chunk-K6LN7FR2.js", "/build/_shared/chunk-HWERMUKJ.js"], "hasAction": true, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/setTheme/index": { "id": "routes/setTheme/index", "parentId": "root", "path": "setTheme", "index": true, "caseSensitive": void 0, "module": "/build/routes/setTheme/index-FDACZZO4.js", "imports": void 0, "hasAction": true, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-8E42DF0B.js" };
+var assets_manifest_default = { "version": "ac5cd509", "entry": { "module": "/build/entry.client-YAT7RBFB.js", "imports": ["/build/_shared/chunk-7CZMI56X.js", "/build/_shared/chunk-FQ25XM2R.js", "/build/_shared/chunk-XV23MX66.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-VSRYGL5L.js", "imports": ["/build/_shared/chunk-WUIWO6JA.js", "/build/_shared/chunk-534BSL5R.js", "/build/_shared/chunk-MKTFCWKP.js", "/build/_shared/chunk-JAMJANG6.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": true, "hasErrorBoundary": true }, "routes/agb/index": { "id": "routes/agb/index", "parentId": "root", "path": "agb", "index": true, "caseSensitive": void 0, "module": "/build/routes/agb/index-2QKTZLT5.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/blog/$slug": { "id": "routes/blog/$slug", "parentId": "root", "path": "blog/:slug", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/blog/$slug-ZDBBRXIZ.js", "imports": ["/build/_shared/chunk-K6LN7FR2.js", "/build/_shared/chunk-OJIJQVNW.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/blog/index": { "id": "routes/blog/index", "parentId": "root", "path": "blog", "index": true, "caseSensitive": void 0, "module": "/build/routes/blog/index-7KV3EFGQ.js", "imports": ["/build/_shared/chunk-HWERMUKJ.js", "/build/_shared/chunk-OJIJQVNW.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/datenschutz/index": { "id": "routes/datenschutz/index", "parentId": "root", "path": "datenschutz", "index": true, "caseSensitive": void 0, "module": "/build/routes/datenschutz/index-PEIP26X7.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/impressum/index": { "id": "routes/impressum/index", "parentId": "root", "path": "impressum", "index": true, "caseSensitive": void 0, "module": "/build/routes/impressum/index-37QMG363.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-Y37SZ6CX.js", "imports": ["/build/_shared/chunk-K6LN7FR2.js", "/build/_shared/chunk-HWERMUKJ.js"], "hasAction": true, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/setTheme/index": { "id": "routes/setTheme/index", "parentId": "root", "path": "setTheme", "index": true, "caseSensitive": void 0, "module": "/build/routes/setTheme/index-FDACZZO4.js", "imports": void 0, "hasAction": true, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-AC5CD509.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var entry = { module: entry_server_exports };
